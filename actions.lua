@@ -47,7 +47,33 @@ function actions.createHeal(label, healAmount, potionCost)
 	}
 end
 
--- ... outras fabricas (defender, ataque especial, etc.)
+-- Fabrica: cria uma ação de espera
+function actions.createWait(label)
+	return {
+		description = label or "Esperar",
+		targetRequired = false,
+		requirement = nil,
+		execute = function(actor, target)
+			_ = target
+			print(string.format("%s decidiu esperar", actor.name))
+		end,
+	}
+end
+
+-- Fabrica: cria uma ação de defesa
+function actions.createDefense(label, defenseMultiplier)
+	defenseMultiplier = defenseMultiplier or 2
+	return {
+		description = label or "Defender",
+		targetRequired = false,
+		requirement = nil,
+		execute = function(actor, target)
+			_ = target
+			actor.defense = actor.defense * defenseMultiplier
+			print(string.format("%s se preparou para defender", actor.name))
+		end,
+	}
+end
 
 -- Dado um ator, retorna acoes validas (filtra por requirement)
 function actions.getValidActions(actor)

@@ -1,3 +1,4 @@
+local actions = require("actions")
 local creatures = {}
 
 creatures[#creatures + 1] = {
@@ -8,6 +9,10 @@ creatures[#creatures + 1] = {
 	attack = 30,
 	defense = 20,
 	speed = 5,
+	actions = {
+		actions.createBasicAttack("Ataque de fogo"),
+		actions.createWait("Aguardar"),
+	},
 }
 
 creatures[#creatures + 1] = {
@@ -17,7 +22,11 @@ creatures[#creatures + 1] = {
 	health = 10,
 	attack = 8,
 	defense = 3,
-	speed = 3,
+	speed = 2,
+	actions = {
+		actions.createBasicAttack("Ataque ácido"),
+		actions.createWait("Aguardar"),
+	},
 }
 
 return creatures

@@ -14,6 +14,7 @@ players[#players + 1] = {
 	actions = {
 		actions.createBasicAttack("Atacar com espada"),
 		actions.createHeal("Usar poção de cura", 5, 1),
+		actions.createDefense("Defender", 2),
 	},
 }
 
@@ -26,6 +27,11 @@ players[#players + 1] = {
 	defense = 2,
 	speed = 1,
 	potions = 3,
+	actions = {
+		actions.createBasicAttack("Atacar com machado"),
+		actions.createHeal("Usar poção de cura", 5, 1),
+		actions.createDefense("Defender", 2),
+	},
 }
 
 return players
