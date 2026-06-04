@@ -68,7 +68,13 @@ while true do
 			print("Sua ação é inválida. Você perdeu a vez!")
 		end
 		if chosenCreature.health <= 0 then
-			print(string.format("Você derrotou o %s!", chosenCreature.name))
+			print()
+			utils.printLine()
+			print()
+			print("🥳")
+			print(string.format("%s prevaleceu e venceu %s.", chosenPlayer.name, chosenCreature.name))
+			print("Parabéns!!!")
+			print()
 			break
 		end
 		-- Simular o turno da criatura
@@ -77,7 +83,13 @@ while true do
 		local chosenCreatureAction = validCreatureActions[math.random(1, #validCreatureActions)]
 		chosenCreatureAction.execute(chosenCreature, chosenPlayer)
 		if chosenPlayer.health <= 0 then
-			print(string.format("Você foi derrotado pelo %s!", chosenCreature.name))
+			print()
+			utils.printLine()
+			print()
+			print("😭")
+			print(string.format("%s não foi capaz de vencer %s.", chosenPlayer.name, chosenCreature.name))
+			print("Quem sabe na próxima vez...")
+			print()
 			break
 		end
 	end
