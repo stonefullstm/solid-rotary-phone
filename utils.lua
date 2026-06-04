@@ -1,5 +1,8 @@
 local utils = {}
 
+function utils.printLine()
+	print("================================================================")
+end
 --- Função para criar uma barra de progresso
 --- @attribute number
 --- @return string
