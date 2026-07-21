@@ -27,7 +27,7 @@ math.randomseed(os.time())
 
 while true do
 	utils.printLine()
-	-- Escolha do personagem
+	-- Escolha do personagem no meu de opções
 	print("Escolha seu personagem:")
 	for i, player in ipairs(players) do
 		print(string.format("%d. %s - %s", i, player.name, player.description))
